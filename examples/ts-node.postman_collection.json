@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "1bfb475f-69ce-4a40-8548-95ebb7de335e",
+		"name": "ts-node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get contact",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/contact",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Clark\",\n\t\"lastName\": \"Kent\",\n\t\"email\": \"clark.kent@pla.net\",\n\t\"company\": \"The Planet\",\n\t\"phone\": 1718436012 \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/contact",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get single contact",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e2c1c253-ed15-45e7-a4ea-9ad7fab3f4d2",
+						"exec": [
+							"pm.variables.set(\"contactID\", \"5e0dd535f609da7eb9ff4b0f\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/contact/{{contactID}}",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"contact",
+						"{{contactID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Contact",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bee882f9-3fc3-480a-a02d-fe3e0fd02fcd",
+						"exec": [
+							"pm.variables.set(\"contactID\", \"5e0dd535f609da7eb9ff4b0f\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/contact/{{contactID}}",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"contact",
+						"{{contactID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Contact",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bee882f9-3fc3-480a-a02d-fe3e0fd02fcd",
+						"exec": [
+							"pm.variables.set(\"contactID\", \"5e0dd535f609da7eb9ff4b0f\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phone\": 1718436013\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/contact/{{contactID}}",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"contact",
+						"{{contactID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete contact",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "14fa5982-80bb-4c27-843d-a5c9b3db2084",
+						"exec": [
+							"pm.variables.set(\"contactID\", \"5e0dd535f609da7eb9ff4b0f\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/contact/{{contactID}}",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"contact",
+						"{{contactID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
